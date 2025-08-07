@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>پنل مدیریت</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>داشبورد مدیریت</h1>
+    <div id="userCount"></div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#dashboard">داشبورد</a></li>
+      <li><a href="#users">کاربران</a></li>
+      <li><a href="#login">ورود</a></li>
+    </ul>
+  </nav>
+
+  <main>
+   
+    <!-- Users Page -->
+    <section id="users">
+      <h2>کاربران</h2>
+      <form id="userForm">
+        <input type="text" id="name" placeholder="نام" required />
+        <input type="email" id="email" placeholder="ایمیل" required />
+        <button type="submit">افزودن</button>
+        <span id="formMsg"></span>
+      </form>
+
+      <input type="text" id="searchInput" placeholder="جستجو..." />
+
+      <table id="usersTable">
+        <thead>
+          <tr>
+            <th onclick="sortTable(0)">نام</th>
+            <th onclick="sortTable(1)">ایمیل</th>
+            <th>عملیات</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- داده‌ها از JS وارد می‌شن -->
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Login Page -->
+    <section id="login">
+      <h2>ورود</h2>
+      <form id="loginForm">
+        <input type="text" id="loginUser" placeholder="نام کاربری" required />
+        <input type="password" id="loginPass" placeholder="رمز عبور" required />
+        <button type="submit">ورود</button>
+        <span id="loginMsg"></span>
+      </form>
+    </section>
+
+     <!-- Dashboard Page -->
+    <section id="dashboard">
+      <h2>آمار فروش</h2>
+      <canvas id="salesChart" width="400" height="200"></canvas>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Admin Panel</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
